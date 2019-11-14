@@ -18,11 +18,15 @@ if __name__ == '__main__':
     aa.append(int(a % 1000 / 100))
     aa.append(int(a / 1000))
 
+    def exchange(a, b):
+        a, b = b, a
+        return (a, b)
+
     for i in range(4):
         aa[i] += 5
         aa[i] %= 10
     for i in range(2):
-        (aa[i], aa[3 - i]) = (aa[3 - i], aa[i])
+        aa[i], aa[3 - i] = exchange(aa[3 - i], aa[i])
     print(aa)
 
 
